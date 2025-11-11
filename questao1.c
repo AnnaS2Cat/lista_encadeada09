@@ -17,8 +17,11 @@ int main(){
     c3.prox = &c4;
     c4.prox = &c5;
     c5.prox = NULL; 
-
-
-
-    
+    struct Caixa* p = &c1; // p ponteiro para o primeiro nó
+    while (p!= NULL){
+        printf("%d ", p->valor); // p^.E, ele vai colocar o valor de cada elemento dentro do nó
+        p = p->prox; //p recebe p^.Prox
+    }
+    printf("\n");
+    return 0;
 }
