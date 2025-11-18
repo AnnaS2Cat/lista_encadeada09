@@ -11,3 +11,13 @@ struct Caixa* insere(struct Caixa* L, int valor) {
         novo->prox = L;
         return novo;
     }
+struct Caixa* aux = L; //aux recebe o primeiro elemento
+    while (aux->prox != NULL && aux->prox->valor < valor) {
+        aux = aux->prox;
+    }
+
+    novo->prox = aux->prox; // inserir um novo elemento depois do aux
+    aux->prox = novo;
+
+    return L;  // cabeça da lista não muda
+}
